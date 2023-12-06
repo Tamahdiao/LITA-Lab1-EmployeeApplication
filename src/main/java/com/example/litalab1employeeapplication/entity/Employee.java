@@ -12,9 +12,27 @@ public class Employee {
     @GeneratedValue
     private Long id;
     private String username;
+    private String firstName;
+    private String lastName;
 
     private String password;
     private String roles;
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
     @OneToMany(mappedBy="employee")
     private Set<Contribution> contribution;

@@ -4,8 +4,11 @@ import com.example.litalab1employeeapplication.entity.Employee;
 import com.example.litalab1employeeapplication.repository.EmployeeRepository;
 import com.example.litalab1employeeapplication.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -29,6 +32,7 @@ public class EmployeeController {
     Employee newEmployee(@RequestBody Employee newEmployee) {
         return service.addEmployee(newEmployee);
     }
+
 
     // Single item
 

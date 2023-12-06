@@ -19,11 +19,11 @@ public class JwtAuthentificationEnterPoint implements AuthenticationEntryPoint {
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
         Map<String, Object> responseMap = new HashMap<>();
-        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+        response.setStatus(HttpServletResponse.SC_FORBIDDEN);
         response.setContentType(MediaType.APPLICATION_JSON_VALUE);
-        responseMap.put("status", HttpServletResponse.SC_UNAUTHORIZED);
+        responseMap.put("status", HttpServletResponse.SC_FORBIDDEN);
         responseMap.put("error", "unauthorized");
-        responseMap.put("message", authException.getMessage());
+        //responseMap.put("message", authException.getMessage());
         responseMap.put("path", request.getServletPath());
         response.getWriter().write(objectMapper.writeValueAsString(responseMap));
     }
